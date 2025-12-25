@@ -5,8 +5,8 @@
 // #include <WiFiClientSecure.h> // REMOVED - Using standard HTTP now
 
 // === WIFI Configuration (REQUIRED) ===
-const char* ssid = "System";     // Replace with your WiFi network name
-const char* password = "Aayan230391"; // Replace with your WiFi password
+const char* ssid = "SSID";     // Replace with your WiFi network name
+const char* password = "PASS"; // Replace with your WiFi password
 // UPDATED to use HTTP instead of HTTPS
 const char* serverUrl = "http://10.0.3.1:8000/entry"; 
 
