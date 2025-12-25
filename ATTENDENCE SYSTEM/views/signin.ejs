@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <!-- We link to the 'Inter' font via Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* bg-gray-100 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* min-h-screen */
+            padding: 1rem; /* p-4 */
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Login Card Container */
+        .login-card {
+            width: 100%;
+            max-width: 28rem; /* max-w-md */
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+            padding: 2rem; /* p-8 */
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        .card-header {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: #111827; /* text-gray-900 */
+            text-align: center;
+            margin-bottom: 1.5rem; /* space-y-6 equivalent before form */
+        }
+
+        /* Form Grouping (Simulating space-y-6) */
+        .form-content > div {
+            margin-bottom: 1.5rem; /* space-y-6 */
+        }
+        
+        /* Label Styling */
+        .form-label {
+            display: block;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: #374151; /* text-gray-700 */
+            margin-bottom: 0.25rem; /* slight separation */
+        }
+
+        /* Input Styling */
+        .form-input {
+            margin-top: 0.25rem; /* mt-1 */
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+            border: 1px solid #d1d5db; /* border border-gray-300 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            transition: all 150ms ease-in-out; /* transition duration-150 ease-in-out */
+            box-sizing: border-box;
+        }
+
+        /* Input Focus State (Replacing focus:ring/focus:border) */
+        .form-input:focus {
+            outline: none; /* Remove default outline */
+            border-color: #3b82f6; /* focus:border-blue-500 */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Custom ring effect approximation */
+        }
+
+        /* Button Styling */
+        .btn-submit {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            border: 1px solid transparent; /* border border-transparent */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: white; /* text-white */
+            background-color: #059669; /* bg-green-600 */
+            cursor: pointer;
+            transition: background-color 150ms ease-in-out, box-shadow 150ms ease-in-out; /* transition duration-150 ease-in-out */
+        }
+
+        /* Button Hover and Focus States */
+        .btn-submit:hover {
+            background-color: #047857; /* hover:bg-green-700 */
+        }
+        
+        .btn-submit:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.5), 0 0 0 6px white; /* focus:ring-2 focus:ring-offset-2 focus:ring-green-500 */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1 class="card-header">DPS ATTENDENCE ADMIN PANEL</h1>
+
+        <!-- The action links to your POST /user/signin route -->
+        <form action="/user/signin" method="POST" class="form-content">
+            <div>
+                <label for="username" class="form-label">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    class="form-input"
+                    placeholder="Enter your username"
+                >
+            </div>
+            
+            <div>
+                <label for="password" class="form-label">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    class="form-input"
+                    placeholder="Enter your password"
+                >
+            </div>
+
+            <button 
+                type="submit" 
+                class="btn-submit"
+            >
+                Sign In
+            </button>
+        </form>
+    </div>
+</body>
+</html>
